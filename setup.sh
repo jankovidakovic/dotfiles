@@ -4,4 +4,4 @@
 # TODO -- ensure that neovim is installed
 # better TODO -- use dotbot
 
-cp -r .config/nvim/lua/custom ~/.config/nvim/lua
+yes | cp -r .config/nvim/lua/custom ~/.config/nvim/lua
