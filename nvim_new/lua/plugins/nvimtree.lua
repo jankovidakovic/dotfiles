@@ -7,5 +7,5 @@ vim.opt.termguicolors = true
 
 return {
 	"nvim-tree/nvim-tree.lua",
-	config = true
+	opts = {}
 }
