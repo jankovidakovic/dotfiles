@@ -6,3 +6,6 @@
 
 - link:
     ~/.config/nvim: nvim
+    ~/.config/zsh: zsh
+    ~/.config/tmux: tmux
+    ~/.config/sway: sway
