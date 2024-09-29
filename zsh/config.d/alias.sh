@@ -4,3 +4,6 @@ alias termbin="nc termbin.com 9999"
 NVIM_APPNAME="nvim"
 alias vim="NVIM_APPNAMAE=$NVIM_APPNAME nvim"
 
+# muscle memory
+alias gs="git status"
+
