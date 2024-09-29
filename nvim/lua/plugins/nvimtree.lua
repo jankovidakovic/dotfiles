@@ -12,8 +12,19 @@ local function my_on_attach(bufnr)
   -- utility function to provide the default mapping options
   -- TODO -- optionally refactor this into a more general utility function (altho thats really not needed)
   local function opts(desc)
-    return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
+    return { 
+		desc = "nvim-tree: " .. desc, 
+		--  when we only attach a mapping to a buffer, then sometimes nvimtree attaches to itself
+		--  and then the mappings dont work in other buffers.
+		--  Without setting the buffer, mappings are on nvim-level and should work?
+		--  buffer = bufnr, 
+		noremap = true, 
+		silent = true, 
+		nowait = true 
+	}	
   end
+
+  print ("I am attached to buffer" .. bufnr)
 
   -- default mappings
   api.config.mappings.default_on_attach(bufnr)
