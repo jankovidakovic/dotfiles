@@ -19,15 +19,9 @@ local function my_on_attach(bufnr)
   api.config.mappings.default_on_attach(bufnr)
 
   -- custom mappings
-  vim.keymap.set("n", "<C-n>", function ()
-	  print("i got toggled by the mapping")
-	  api.tree.toggle()
-  end, opts("Toggle"))
+  vim.keymap.set("n", "<A-1>", api.tree.toggle, opts("Toggle"))
 
-  vim.keymap.set("n", "<leader>e", function ()
-	  print("i got focused by the mapping, bitch")
-	  api.tree.focus()
-  end, opts("Focus"))
+  vim.keymap.set("n", "<leader>e", api.tree.focus, opts("Focus"))
   -- TODO -- why are these not working? they should kinda be working, no?
 end
 

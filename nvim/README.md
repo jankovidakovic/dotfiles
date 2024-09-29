@@ -1,3 +1,2 @@
-# Example_config
-
-This can be used as an example custom config for NvChad. Do check the https://github.com/NvChad/nvcommunity
+- files in `plugin/` get sourced automatically
+- files in `lua/` do not get sourced automatically (need to be sourced manually by `require`)
