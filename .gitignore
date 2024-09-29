@@ -1,0 +1,2 @@
+# ignore zsh completions cache files
+.zcompdump*
