@@ -1,0 +1,2 @@
+- files in `plugin/` get sourced automatically
+- files in `lua/` do not get sourced automatically (need to be sourced manually by `require`)
