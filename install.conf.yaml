@@ -9,3 +9,4 @@
     ~/.config/zsh: zsh
     ~/.config/tmux: tmux
     ~/.config/sway: sway
+    ~/.config/foot: foot
