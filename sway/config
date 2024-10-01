@@ -28,5 +28,10 @@ include /etc/sway/modes/*
 # include additional configs e.g. to autostart applications
 include /etc/sway/config.d/*
 
+# okay so definitions get sourced before config.d, 
+# which changes the background
+# but we dont really want this shit background
+# solution -- comment line in /etc/sway/config.d/90-enable-theme.conf
+
 # user config
 include $HOME/.config/sway/config.d/*.conf
