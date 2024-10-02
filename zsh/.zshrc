@@ -39,3 +39,6 @@ alias ssh="TERM=xterm-256color ssh"  # this is wild yo
 # SSH agent
 eval $(ssh-agent)
 source /usr/share/nvm/init-nvm.sh
+
+. "$HOME/.cargo/env"
+source $HOME/.cargo/env
