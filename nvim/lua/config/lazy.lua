@@ -22,6 +22,7 @@ require("lazy").setup({
 		import = "plugins"  -- this will import the `plugins` 
 	},
 	install = { colorscheme = { "gruvbox" } },
-	checker = { enabled = true },  -- this doesnt install the updates, only checks for updates (which is fine)
+	-- disable the checker (annoyingly checks for updates on every startup)
+	-- checker = { enabled = true },  -- this doesnt install the updates, only checks for updates (which is fine)
 	-- its also possible that we wanna commit lazy-lock.json in order to lock the plugin versions
 })
