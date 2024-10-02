@@ -1,6 +1,6 @@
 
 # base config for oh my zsh
-source /usr/share/oh-my-zsh/zshrc
+source /usr/share/oh-my-zsh/zshrc  # this sources the oh-my-zsh so we cannot configure plugins
 
 #p10k instant prompt to make terminal open a bit snappier
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
@@ -35,3 +35,7 @@ alias ssh="TERM=xterm-256color ssh"  # this is wild yo
 
 # haskell ghc default environment
 [ -f "/home/jvidakovic/.ghcup/env" ] && source "/home/jvidakovic/.ghcup/env" # ghcup-env
+
+# SSH agent
+eval $(ssh-agent)
+source /usr/share/nvm/init-nvm.sh
