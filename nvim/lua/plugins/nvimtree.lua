@@ -24,8 +24,6 @@ local function my_on_attach(bufnr)
 	}	
   end
 
-  print ("I am attached to buffer" .. bufnr)
-
   -- default mappings
   api.config.mappings.default_on_attach(bufnr)
 
