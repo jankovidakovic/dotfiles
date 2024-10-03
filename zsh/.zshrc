@@ -37,8 +37,11 @@ alias ssh="TERM=xterm-256color ssh"  # this is wild yo
 [ -f "/home/jvidakovic/.ghcup/env" ] && source "/home/jvidakovic/.ghcup/env" # ghcup-env
 
 # SSH agent
-eval $(ssh-agent)
-source /usr/share/nvm/init-nvm.sh
+# eval $(ssh-agent)
+if [[ -e /usr/share/nvm/init-nvm.sh ]]; then
+	source /usr/share/nvm/init-nvm.sh
+fi
 
-. "$HOME/.cargo/env"
-source $HOME/.cargo/env
+if [[ -e "$HOME/.cargo/env" ]]; then
+	source "$HOME/.cargo/env"
+fi
