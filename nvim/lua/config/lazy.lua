@@ -25,4 +25,8 @@ require("lazy").setup({
 	-- disable the checker (annoyingly checks for updates on every startup)
 	-- checker = { enabled = true },  -- this doesnt install the updates, only checks for updates (which is fine)
 	-- its also possible that we wanna commit lazy-lock.json in order to lock the plugin versions
+	change_detection = {
+		enabled = true,
+		notify = false
+	}
 })
