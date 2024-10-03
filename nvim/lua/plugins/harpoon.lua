@@ -8,6 +8,8 @@ return {
 		harpoon:setup()
 
 		-- TODO -- filter out nvim_tree from the list
+		-- TODO -- make these searchable (figure out how searching even works)
+		-- TODO -- make which-key work
 
 		-- add current buffer to the list
 		vim.keymap.set("n", "<leader>a", function() harpoon:list():add() end)
@@ -15,7 +17,7 @@ return {
 		-- how to remove from list tho
 
 		-- list all buffers
-		vim.keymap.set("n", "<C-e>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
+		vim.keymap.set("n", "<leader><Tab>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
 
 		vim.keymap.set("n", "<C-h>", function() harpoon:list():select(1) end)
 		vim.keymap.set("n", "<C-t>", function() harpoon:list():select(2) end)
