@@ -46,5 +46,9 @@ return {
 	stylua = {},
 	ruff = {
 		root_dir = get_python_root_dir,
-	}
+	},
+	-- bash language server
+	bashls = {},
+	-- bash formatting
+	shfmt = {}
 }
