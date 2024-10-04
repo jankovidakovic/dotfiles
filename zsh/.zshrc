@@ -7,27 +7,22 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-source ~/dotfiles/antigen.zsh
-
-antigen use oh-my-zsh
-
-
 # plugins
-antigen bundle git
-antigen bundle ssh-agent
-antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle zsh-users/zsh-history-substring-search
+# antigen bundle git
+# antigen bundle ssh-agent
+# antigen bundle zsh-users/zsh-syntax-highlighting
+# antigen bundle zsh-users/zsh-history-substring-search
 
-antigen theme robbyrussell
+# antigen theme robbyrussell
 
-antigen apply
+# antigen apply
 
 
 # Use powerline
-# USE_POWERLINE="true"  # what the fuck is this?
+USE_POWERLINE="true"  # what the fuck is this?
 
 # set theme for zsh
-# ZSH_THEME="robbyrussell"
+ZSH_THEME="robbyrussell"  # this DOESNT WORK!!! (theme gets set in `/usr/share/oh-my-zsh/zshrc`)
 
 # Source manjaro-zsh-configuration
 # TODO -- does this have to be sourced, or can we live with just copying the parts?
@@ -54,7 +49,6 @@ alias ssh="TERM=xterm-256color ssh"  # this is wild yo
 [ -f "/home/jvidakovic/.ghcup/env" ] && source "/home/jvidakovic/.ghcup/env" # ghcup-env
 
 # SSH agent
-# eval $(ssh-agent)
 if [[ -e /usr/share/nvm/init-nvm.sh ]]; then
 	source /usr/share/nvm/init-nvm.sh
 fi
