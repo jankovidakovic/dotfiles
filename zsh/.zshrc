@@ -1,19 +1,36 @@
 
 # base config for oh my zsh
-source /usr/share/oh-my-zsh/zshrc  # this sources the oh-my-zsh so we cannot configure plugins
+# source /usr/share/oh-my-zsh/zshrc  # this sources the oh-my-zsh so we cannot configure plugins
 
 #p10k instant prompt to make terminal open a bit snappier
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+source ~/dotfiles/antigen.zsh
+
+antigen use oh-my-zsh
+
+
+# plugins
+antigen bundle git
+antigen bundle ssh-agent
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle zsh-users/zsh-history-substring-search
+
+antigen theme robbyrussell
+
+antigen apply
+
+
 # Use powerline
-USE_POWERLINE="true"  # what the fuck is this?
+# USE_POWERLINE="true"  # what the fuck is this?
 
 # set theme for zsh
-ZSH_THEME="robbyrussell"
+# ZSH_THEME="robbyrussell"
 
 # Source manjaro-zsh-configuration
+# TODO -- does this have to be sourced, or can we live with just copying the parts?
 #
 if [[ -e /usr/share/zsh/manjaro-zsh-config ]]; then
     source /usr/share/zsh/manjaro-zsh-config
