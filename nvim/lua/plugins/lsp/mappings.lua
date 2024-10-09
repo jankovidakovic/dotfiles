@@ -25,7 +25,7 @@ return function(bufnr)
 	--
 	--           -- Fuzzy find all the symbols in your current document.
 	--           --  Symbols are things like variables, functions, types, etc.
-	map('<leader>ds', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols')
+	map('<leader>fs', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols')
 	--
 	--           -- Fuzzy find all the symbols in your current workspace.
 	--           --  Similar to document symbols, except searches over your entire project.
@@ -33,7 +33,7 @@ return function(bufnr)
 	--
 	--           -- Rename the variable under your cursor.
 	--           --  Most Language Servers support renaming across files, etc.
-	map('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
+	map('<leader>ra', vim.lsp.buf.rename, '[R]en[a]me')
 	--
 	--           -- Execute a code action, usually your cursor needs to be on top of an error
 	--           -- or a suggestion from your LSP for this to activate.
@@ -44,10 +44,10 @@ return function(bufnr)
 	map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
 
 	map(
-		"<leader>vd", 
+		"<leader>vd",
 		function()
-			vim.diagnostic.open_float { border = "rounded"}
-		end, 
+			vim.diagnostic.open_float { border = "rounded" }
+		end,
 		"[V]iew [D]iagnostics"
 	)
 
