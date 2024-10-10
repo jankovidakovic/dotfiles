@@ -2,20 +2,13 @@
 # base config for oh my zsh
 # source /usr/share/oh-my-zsh/zshrc  # this sources the oh-my-zsh so we cannot configure plugins
 
+BASE_OHMYZSH_CONFIG=~/.config/zsh/.zshrc.manjaro
+source $BASE_OHMYZSH_CONFIG
+
 #p10k instant prompt to make terminal open a bit snappier
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
-
-# plugins
-# antigen bundle git
-# antigen bundle ssh-agent
-# antigen bundle zsh-users/zsh-syntax-highlighting
-# antigen bundle zsh-users/zsh-history-substring-search
-
-# antigen theme robbyrussell
-
-# antigen apply
 
 
 # Use powerline
