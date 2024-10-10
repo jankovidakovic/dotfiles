@@ -4,6 +4,7 @@ return function(bufnr)
 		vim.keymap.set(mode, keys, func, { buffer = bufnr, desc = 'LSP: ' .. desc })
 	end
 
+	map("<leader>sh", vim.lsp.buf.signature_help, "[S]ignature [H]elp")
 	-- LSP mappings
 	--
 	--           -- Jump to the definition of the word under your cursor.
