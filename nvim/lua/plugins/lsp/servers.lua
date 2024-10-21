@@ -11,12 +11,20 @@ end
 
 get_python_venv_path = function(bufnr)
 	local project_root = get_python_root_dir(bufnr)
-	return vim.fn.resolve(project_root .. "/.venv/bin/python")
+	if project_root == nil then
+		return nil
+	else
+		return vim.fn.resolve(project_root .. "/.venv/bin/python")
+	end
 end
 
 return {
 	pyright = {
 		root_dir = get_python_root_dir,
+		-- settings are getting resolved _immediately_
+		-- consequence: if opening a non-python root, get_python_venv_path will return nil
+		-- but thats fine as pyright will never even get attached, right?
+		-- TODO -- modify so that on_attach loads different settings
 		settings = {
 			pythonPath = get_python_venv_path(0), -- current buffer
 			analysis = {
