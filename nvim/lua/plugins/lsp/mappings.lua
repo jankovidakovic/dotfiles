@@ -53,4 +53,8 @@ return function(bufnr)
 	)
 
 	map("<leader>fm", vim.lsp.buf.format, "[F]or[M]at")
+
+	map(
+		"<leader>fe", vim.diagnostic.goto_next, "[F]orward [E]rror"
+	)
 end
