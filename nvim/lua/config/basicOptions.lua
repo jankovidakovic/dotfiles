@@ -72,3 +72,13 @@ vim.opt.scrolloff = 10
 vim.opt.tabstop = 4
 vim.opt.expandtab = false -- TODO: might need to change this for python
 vim.opt.shiftwidth = 4
+
+-- folding
+-- followed this tutorial: https://www.jackfranklin.co.uk/blog/code-folding-in-vim-neovim/
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+vim.opt.foldtext = ""
+vim.opt.foldlevel = 99
+vim.opt.foldlevelstart = 1
+vim.opt.foldnestmax = 4
+
