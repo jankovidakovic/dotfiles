@@ -58,5 +58,9 @@ return {
 	-- bash language server
 	bashls = {},
 	-- bash formatting
-	shfmt = {}
+	shfmt = {},
+	-- haskell
+	ormolu = {},
+	hls = {},
+	hlint = {}
 }
