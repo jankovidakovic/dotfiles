@@ -18,6 +18,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+	"github/copilot.vim",
 	spec = {
 		import = "plugins" -- this will import the `plugins`
 	},
