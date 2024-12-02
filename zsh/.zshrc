@@ -1,6 +1,7 @@
 
 # base config for oh my zsh
-# source /usr/share/oh-my-zsh/zshrc  # this sources the oh-my-zsh so we cannot configure plugins
+source /usr/share/oh-my-zsh/zshrc  # this sources the oh-my-zsh so we cannot configure plugins
+#  -> okay I guess this makes the 
 
 BASE_OHMYZSH_CONFIG=~/.config/zsh/.zshrc.manjaro
 source $BASE_OHMYZSH_CONFIG
@@ -20,9 +21,12 @@ ZSH_THEME="robbyrussell"  # this DOESNT WORK!!! (theme gets set in `/usr/share/o
 # Source manjaro-zsh-configuration
 # TODO -- does this have to be sourced, or can we live with just copying the parts?
 #
+
+# this configures zsh and probably plugins??
 if [[ -e /usr/share/zsh/manjaro-zsh-config ]]; then
     source /usr/share/zsh/manjaro-zsh-config
 fi
+
 # Use manjaro zsh prompt
 if [[ -e /usr/share/zsh/manjaro-zsh-prompt ]]; then
     source /usr/share/zsh/manjaro-zsh-prompt
