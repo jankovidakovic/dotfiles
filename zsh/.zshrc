@@ -49,3 +49,13 @@ fi
 if [[ -e "$HOME/.cargo/env" ]]; then
 	source "$HOME/.cargo/env"
 fi
+
+# enable google-cloud-console completion
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/jvidakovic/google-cloud-sdk/path.zsh.inc' ]; then . '/home/jvidakovic/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/jvidakovic/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/jvidakovic/google-cloud-sdk/completion.zsh.inc'; fi
+
+echo "Change 'timeout' to 'time' in docker docs: https://github.com/docker/docs/blob/a65dac8e99679d063eaa8aff9526694053491532/data/engine-cli/docker_container_stop.yaml#L67"
