@@ -59,5 +59,7 @@ return {
 	-- haskell
 	ormolu = {},
 	hls = {},
-	hlint = {}
+	hlint = {},
+	-- ansible
+	ansiblels = {},
 }
