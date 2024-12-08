@@ -63,3 +63,5 @@ if [ -f '/home/jvidakovic/google-cloud-sdk/path.zsh.inc' ]; then . '/home/jvidak
 if [ -f '/home/jvidakovic/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/jvidakovic/google-cloud-sdk/completion.zsh.inc'; fi
 
 echo "Change 'timeout' to 'time' in docker docs: https://github.com/docker/docs/blob/a65dac8e99679d063eaa8aff9526694053491532/data/engine-cli/docker_container_stop.yaml#L67"
+
+EDITOR="nvim"
