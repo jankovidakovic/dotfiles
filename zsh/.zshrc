@@ -43,7 +43,7 @@ alias ssh="TERM=xterm-256color ssh"  # this is wild yo
 
 
 # haskell ghc default environment
-[ -f "/home/jvidakovic/.ghcup/env" ] && source "/home/jvidakovic/.ghcup/env" # ghcup-env
+[ -f "/home/jvidakovic/.ghcup/env" ] && . "/home/jvidakovic/.ghcup/env" # ghcup-env
 
 # SSH agent
 if [[ -e /usr/share/nvm/init-nvm.sh ]]; then
@@ -65,3 +65,4 @@ if [ -f '/home/jvidakovic/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/
 echo "Change 'timeout' to 'time' in docker docs: https://github.com/docker/docs/blob/a65dac8e99679d063eaa8aff9526694053491532/data/engine-cli/docker_container_stop.yaml#L67"
 
 EDITOR="nvim"
+
