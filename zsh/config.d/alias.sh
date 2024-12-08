@@ -10,3 +10,5 @@ alias gs="git status"
 # docker
 alias dpsa="docker ps -a"
 alias dils="docker image ls"
+
+alias av="ansible-vault"
