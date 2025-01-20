@@ -29,7 +29,10 @@ return {
 			pythonPath = get_python_venv_path(0), -- current buffer
 			analysis = {
 				autoImportCompletions = true,
-				diagnosticMode = "openFilesOnly"
+				-- enables importing source files without an editable install
+				extraPaths = {
+					get_python_root_dir(0) -- 0 represents the current buffer, thats okay?
+				}
 			},
 		}
 	},
