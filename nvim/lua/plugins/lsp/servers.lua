@@ -26,12 +26,17 @@ return {
 		-- but thats fine as pyright will never even get attached, right?
 		-- TODO -- modify so that on_attach loads different settings
 		settings = {
-			pythonPath = get_python_venv_path(0), -- current buffer
-			analysis = {
-				autoImportCompletions = true,
-				-- enables importing source files without an editable install
-				extraPaths = {
-					get_python_root_dir(0) -- 0 represents the current buffer, thats okay?
+			-- apparently settings need to be under 'python' key
+			python = {
+				pythonPath = get_python_venv_path(0), -- current buffer
+				analysis = {
+					autoImportCompletions = true,
+					typeCheckingMode = "basic",
+					-- reportIncompatibleMethodOverride = "off",
+					-- enables importing source files without an editable install
+					extraPaths = {
+						get_python_root_dir(0) -- 0 represents the current buffer, thats okay?
+					}
 				}
 			},
 		}
