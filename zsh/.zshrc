@@ -42,14 +42,15 @@ ZSH_HIGHLIGHT_STYLES[comment]='fg=blue'
 alias ssh="TERM=xterm-256color ssh"  # this is wild yo
 
 
-# haskell ghc default environment
+# [haskell] activate ghcup env?? what the fuck does this do?
 [ -f "/home/jvidakovic/.ghcup/env" ] && . "/home/jvidakovic/.ghcup/env" # ghcup-env
 
-# SSH agent
+# activate nvm if exists
 if [[ -e /usr/share/nvm/init-nvm.sh ]]; then
 	source /usr/share/nvm/init-nvm.sh
 fi
 
+# [rust] activate cargo default env (if exists)
 if [[ -e "$HOME/.cargo/env" ]]; then
 	source "$HOME/.cargo/env"
 fi
