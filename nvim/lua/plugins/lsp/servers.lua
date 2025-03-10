@@ -1,4 +1,4 @@
-get_python_root_dir = function(bufnr)
+local get_python_root_dir = function(bufnr)
 	local root_markers = {
 		"pyproject.toml",
 		"setup.py",
@@ -9,12 +9,14 @@ get_python_root_dir = function(bufnr)
 	return vim.fs.root(bufnr, root_markers)
 end
 
-get_python_venv_path = function(bufnr)
+local get_python_venv_path = function(bufnr)
 	local project_root = get_python_root_dir(bufnr)
 	if project_root == nil then
 		return nil
 	else
-		return vim.fn.resolve(project_root .. "/.venv/bin/python")
+		-- this motherfucker resolves the symlink
+		-- return vim.fn.resolve(project_root .. "/.venv/bin/python")
+		return project_root .. "/.venv/bin/python"
 	end
 end
 
