@@ -1,0 +1,33 @@
+[column]
+	ui = auto
+[branch]
+	sort = -committerdate
+[tag]
+	sort = version:refname
+[diff]
+	algorithm = histogram
+	colorMoved = plain
+	mnemonicPrefix = true
+	renames = true
+	tool = nvimdiff
+[push]
+	default = simple
+	autoSetupRemote = true
+	followTags = true
+[fetch]
+	prune = true
+	pruneTags = true
+	all = true
+[commit]
+	verbose = true
+[user]
+	email = janko@tensorpix.ai
+	name = jankovidakovic
+[merge]
+	tool = nvimdiff
+[pull]
+	rebase = true
+[pager]
+	branch = false
+[core]
+	editor = nvim
