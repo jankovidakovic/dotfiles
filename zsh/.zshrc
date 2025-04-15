@@ -68,3 +68,5 @@ echo "Change 'timeout' to 'time' in docker docs: https://github.com/docker/docs/
 # ansible vault makes use of this
 EDITOR="nvim"
 
+path+=("/home/jvidakovic/bin/")
+export PATH
