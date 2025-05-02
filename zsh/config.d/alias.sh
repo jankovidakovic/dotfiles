@@ -12,3 +12,5 @@ alias dpsa="docker ps -a"
 alias dils="docker image ls"
 
 alias av="ansible-vault"
+
+alias gpl="git pull"
