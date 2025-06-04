@@ -11,3 +11,17 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 		vim.highlight.on_yank()
 	end,
 })
+
+vim.api.nvim_create_augroup("LintAndFormatOnSave", {})
+
+vim.api.nvim_create_autocmd(
+	"BufWritePost",
+	{
+		pattern = "*.py",
+		group = "LintAndFormatOnSave",
+		callback = function()
+			vim.cmd("silent !ruff check --fix % && ruff format %")
+			vim.cmd("edit")
+		end,
+	}
+)
