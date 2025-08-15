@@ -12,36 +12,38 @@ end
 local get_python_venv_path = function(bufnr)
 	local project_root = get_python_root_dir(bufnr)
 	if project_root == nil then
+		print("Resolved project_root to nil")
 		return nil
 	else
 		-- this motherfucker resolves the symlink
 		-- return vim.fn.resolve(project_root .. "/.venv/bin/python")
+		print("Resolved project root to " .. project_root)
 		return project_root .. "/.venv/bin/python"
 	end
 end
 
 return {
-	pyright = {
-		root_dir = get_python_root_dir,
-		-- settings are getting resolved _immediately_
-		-- consequence: if opening a non-python root, get_python_venv_path will return nil
-		-- but thats fine as pyright will never even get attached, right?
-		-- TODO -- modify so that on_attach loads different settings
+	-- preludo buraz
+	basedpyright = {
+		-- https://docs.basedpyright.com/latest/configuration/language-server-settings/#based-settings
 		settings = {
-			-- apparently settings need to be under 'python' key
-			python = {
-				pythonPath = get_python_venv_path(0), -- current buffer
+			basedpyright = {
+				disableOrganizedImports = true,
 				analysis = {
 					autoImportCompletions = true,
-					typeCheckingMode = "basic",
-					-- reportIncompatibleMethodOverride = "off",
-					-- enables importing source files without an editable install
-					extraPaths = {
-						get_python_root_dir(0) -- 0 represents the current buffer, thats okay?
+					-- lets set this to false and see what happens,
+					autoSearchPaths = false,
+					-- we should define workspace in the basedpyright config
+					-- we dont have to set pythonPath because basedpyright is based
+					-- https://docs.basedpyright.com/latest/benefits-over-pyright/better-defaults/#default-value-for-pythonpath
+					diagnosticMode = "workspace",
+					inlayHints = {
+						genericTypes = true,
 					}
 				}
-			},
-		}
+			}
+		},
+		root_dir = get_python_root_dir
 	},
 	lua_ls = {
 		capabilities = {},
