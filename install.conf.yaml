@@ -10,3 +10,4 @@
     ~/.config/tmux: tmux
     ~/.config/sway: sway
     ~/.config/foot: foot
+    ~/.gitconfig: git/.gitconfig
