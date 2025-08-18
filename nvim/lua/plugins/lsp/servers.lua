@@ -36,7 +36,9 @@ return {
 					-- we should define workspace in the basedpyright config
 					-- we dont have to set pythonPath because basedpyright is based
 					-- https://docs.basedpyright.com/latest/benefits-over-pyright/better-defaults/#default-value-for-pythonpath
-					diagnosticMode = "workspace",
+
+					-- i would want this to be "workspace" but basedpyright is too sluggish 
+					diagnosticMode = "openFilesOnly",
 					inlayHints = {
 						genericTypes = true,
 					}
