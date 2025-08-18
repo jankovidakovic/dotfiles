@@ -39,6 +39,16 @@ return {
 
 					-- i would want this to be "workspace" but basedpyright is too sluggish 
 					diagnosticMode = "openFilesOnly",
+					diagnosticSeverityOverrides = {
+						reportAny = false,
+						reportUnusedCallResult = false,
+						reportMissingTypeStubs = false,
+						reportUnknownMemberType = false,
+						reportUnknownVariableType = false,
+						reportUnknownArgumentType = false,
+						reportExplicitAny = false,
+						reportImplicitStringConcatenation = false,
+					},
 					inlayHints = {
 						genericTypes = true,
 					}
