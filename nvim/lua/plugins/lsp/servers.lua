@@ -70,7 +70,7 @@ return {
 	shfmt = {},
 	-- haskell
 	ormolu = {},
-	hls = {},
+	-- hls = {},  hls consistently fails to install upon init, and i dont have time to deal with it
 	hlint = {},
 	-- ansible
 	ansiblels = {},
