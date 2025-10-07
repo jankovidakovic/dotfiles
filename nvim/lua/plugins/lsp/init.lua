@@ -13,7 +13,7 @@ local lsp_dependencies = {
 }
 
 local blacklist_lsp_servers = {
-	"basedpyright"
+	-- "basedpyright"
 }
 
 return {
