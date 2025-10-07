@@ -52,6 +52,8 @@ return {
 						reportExplicitAny = false,
 						reportImplicitStringConcatenation = false,
 						reportMissingTypeArgument = false,
+						reportImplicitRelativeImport = false,
+						reportUnannotatedClassAttribute = false,
 					},
 					inlayHints = {
 						genericTypes = true,
