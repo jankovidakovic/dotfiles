@@ -9,9 +9,6 @@ require("config.keymaps")
 require("config.autocmds")
 require("config.lazy") -- this kinda requires and installs all the plugins
 
--- sets up the copilot
--- require("config.copilot")
-
 -- okay lets set up a colorscheme next
 vim.o.background = "dark"
 vim.cmd "colorscheme gruvbox"
