@@ -13,6 +13,10 @@ return {
 				"markdown_inline",
 				"bash",
 				"javascript",
+				"typescript",
+				"html",
+				"css",
+				"scss",
 				"json"
 			},
 			sync_install = true,

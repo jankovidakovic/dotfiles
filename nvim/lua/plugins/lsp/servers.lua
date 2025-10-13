@@ -37,7 +37,7 @@ return {
 					-- we dont have to set pythonPath because basedpyright is based
 					-- https://docs.basedpyright.com/latest/benefits-over-pyright/better-defaults/#default-value-for-pythonpath
 
-					-- i would want this to be "workspace" but basedpyright is too sluggish 
+					-- i would want this to be "workspace" but basedpyright is too sluggish
 					diagnosticMode = "openFilesOnly",
 					diagnosticSeverityOverrides = {
 						reportAny = false,
@@ -46,7 +46,7 @@ return {
 						reportUnknownMemberType = false,
 						reportUnknownVariableType = false,
 						reportUnknownArgumentType = false,
-						-- jel ti mene jebes 
+						-- jel ti mene jebes
 						reportMissingParameterType = false,
 						reportUnknownParameterType = false,
 						reportExplicitAny = false,
@@ -92,4 +92,19 @@ return {
 	hlint = {},
 	-- ansible
 	ansiblels = {},
+	-- typescript language server (apparently supports both javascript and typescript)
+	ts_ls = {
+		filetypes = { "typescript", "javascript", "javascriptreact", "vue" },
+		init_options = {
+			plugins = {
+				{
+					name = "@vue/typescript-plugin",
+					location = vim.fn.stdpath("data") ..
+						"/mason/packages/vue-language-server/node_modules/@vue/language-server",
+					languages = { "vue" }
+				}
+			}
+		},
+	},
+	volar = {}
 }
