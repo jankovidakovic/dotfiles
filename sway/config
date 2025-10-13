@@ -11,22 +11,22 @@ set $theme /usr/share/sway/themes/matcha-green
 include $theme/definitions
 
 # global variables
-include /etc/sway/definitions
+include $HOME/.config/sway/etc/definitions
 
-# user variables
+# user variables -> defines background etc
 include $HOME/.config/sway/definitions.d/*.conf
 
-include /etc/sway/inputs/*
-include /etc/sway/outputs/*
+include $HOME/.config/sway/etc/inputs/*
+include $HOME/.config/sway/etc/outputs/*
 
 # enable modes
-include /etc/sway/modes/*
+include $HOME/.config/sway/etc/modes/*
 
 # only enable this if every app you use is compatible with wayland
 # xwayland disable
 
 # include additional configs e.g. to autostart applications
-include /etc/sway/config.d/*
+include $HOME/.config/sway/etc/config.d/*
 
 # okay so definitions get sourced before config.d, 
 # which changes the background
@@ -35,3 +35,4 @@ include /etc/sway/config.d/*
 
 # user config
 include $HOME/.config/sway/config.d/*.conf
+# output eDP-1 background /home/jvidakovic/.config/sway/wallpaper.jpg fill
