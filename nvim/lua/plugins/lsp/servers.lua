@@ -106,5 +106,7 @@ return {
 			}
 		},
 	},
-	volar = {}
+	volar = {},
+	eslint = {},
+	prettier = {}
 }
