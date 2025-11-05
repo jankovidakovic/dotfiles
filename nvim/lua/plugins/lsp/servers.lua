@@ -55,6 +55,7 @@ return {
 						reportImplicitRelativeImport = false,
 						reportUnannotatedClassAttribute = false,
 						reportUntypedFunctionDecorator = false,
+						reportImplicitOverride = false,
 					},
 					inlayHints = {
 						genericTypes = true,
