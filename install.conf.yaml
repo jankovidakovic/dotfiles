@@ -9,5 +9,7 @@
     ~/.config/zsh: zsh
     ~/.config/tmux: tmux
     ~/.config/sway: sway
+    # wayland overlay bar
+    ~/.config/wob.ini: sway/other_configs/wob.ini
     ~/.config/foot: foot
     ~/.gitconfig: git/.gitconfig
