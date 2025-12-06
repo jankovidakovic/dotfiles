@@ -16,6 +16,7 @@ include $HOME/.config/sway/etc/definitions
 # user variables -> defines background etc
 include $HOME/.config/sway/definitions.d/*.conf
 
+# inputs (keyboard, mouse) and outputs (monitors)
 include $HOME/.config/sway/etc/inputs/*
 include $HOME/.config/sway/etc/outputs/*
 
@@ -35,4 +36,3 @@ include $HOME/.config/sway/etc/config.d/*
 
 # user config
 include $HOME/.config/sway/config.d/*.conf
-# output eDP-1 background /home/jvidakovic/.config/sway/wallpaper.jpg fill
