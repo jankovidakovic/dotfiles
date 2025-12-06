@@ -12,4 +12,6 @@
     # wayland overlay bar
     ~/.config/wob.ini: sway/other_configs/wob.ini
     ~/.config/foot: foot
+    # waybar
+    ~/.config/waybar: waybar
     ~/.gitconfig: git/.gitconfig

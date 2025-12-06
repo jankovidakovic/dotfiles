@@ -27,7 +27,7 @@ set $bindsym bindsym --to-code
 set $unbindsym unbindsym --to-code
 
 # Script paths
-set $script_path /usr/share/sway/scripts
+set $script_path $HOME/.config/sway/usr_share/scripts
 
 # Terminal emulator
 set $term foot  # footclient apparently doesnt exist
