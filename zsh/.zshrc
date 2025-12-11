@@ -68,3 +68,6 @@ EDITOR="nvim"
 
 path+=("/home/jvidakovic/bin/")
 export PATH
+
+# source kubectl auto-completion
+source <(kubectl completion zsh)
