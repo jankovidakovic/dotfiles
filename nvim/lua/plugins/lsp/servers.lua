@@ -56,6 +56,7 @@ return {
 						reportUnannotatedClassAttribute = false,
 						reportUntypedFunctionDecorator = false,
 						reportImplicitOverride = false,
+						reportUnusedParameter = false,
 					},
 					inlayHints = {
 						genericTypes = true,
