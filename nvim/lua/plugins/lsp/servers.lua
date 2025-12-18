@@ -111,5 +111,6 @@ return {
 	},
 	volar = {},
 	eslint = {},
-	prettier = {}
+	prettier = {},
+	jsonls = {}
 }
