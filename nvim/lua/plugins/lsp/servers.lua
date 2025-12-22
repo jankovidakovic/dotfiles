@@ -112,5 +112,19 @@ return {
 	volar = {},
 	eslint = {},
 	prettier = {},
-	jsonls = {}
+	jsonls = {},
+	ty = {
+		settings = {
+			ty = {
+				diagnosticMode = "workspace",
+				inlayHints = {
+					variableTypes = true,
+					callArgumentNames = true
+				},
+				completions = {
+					autoImport = true
+				}
+			}
+		}
+	}
 }
