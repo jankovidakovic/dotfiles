@@ -12,10 +12,6 @@ local lsp_dependencies = {
 	'hrsh7th/cmp-nvim-lsp',
 }
 
-local blacklist_lsp_servers = {
-	"basedpyright"
-}
-
 return {
 	-- Main LSP Configuration
 	'neovim/nvim-lspconfig',
@@ -33,11 +29,6 @@ return {
 
 		local ensure_installed = vim.tbl_keys(servers or {})
 		-- blacklist some servers
-		for blacklist_server, _ in ipairs(blacklist_lsp_servers) do
-			-- remove server from ensure_installed
-			print("Blacklisting server " .. blacklist_server)
-			ensure_installed[blacklist_server] = nil
-		end
 
 		-- install required tools
 		require('mason-tool-installer').setup { ensure_installed = ensure_installed }
@@ -51,6 +42,7 @@ return {
 					-- this kinda modifies the global variable, no?
 					server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
 					require('lspconfig')[server_name].setup(server)
+					print("Successfully set-up server " .. server_name)
 				end,
 			},
 		}

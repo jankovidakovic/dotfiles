@@ -23,7 +23,7 @@ local get_python_venv_path = function(bufnr)
 end
 
 return {
-	-- preludo buraz
+	-- -- preludo buraz
 	basedpyright = {
 		-- https://docs.basedpyright.com/latest/configuration/language-server-settings/#based-settings
 		settings = {
@@ -113,18 +113,4 @@ return {
 	eslint = {},
 	prettier = {},
 	jsonls = {},
-	ty = {
-		settings = {
-			ty = {
-				diagnosticMode = "workspace",
-				inlayHints = {
-					variableTypes = true,
-					callArgumentNames = true
-				},
-				completions = {
-					autoImport = true
-				}
-			}
-		}
-	}
 }

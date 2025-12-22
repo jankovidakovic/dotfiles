@@ -28,6 +28,6 @@ require("lazy").setup({
 	-- its also possible that we wanna commit lazy-lock.json in order to lock the plugin versions
 	change_detection = {
 		enabled = true,
-		notify = false
+		notify = true
 	}
 })
