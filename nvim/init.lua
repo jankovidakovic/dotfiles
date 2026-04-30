@@ -7,6 +7,7 @@ vim.g.maplocalleader = ' '
 require("config.basicOptions")
 require("config.keymaps")
 require("config.autocmds")
+require("config.lsp_reload")
 require("config.lazy") -- this kinda requires and installs all the plugins
 
 -- okay lets set up a colorscheme next
