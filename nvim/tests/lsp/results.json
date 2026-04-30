@@ -1,0 +1,5 @@
+[
+  {"attached":true,"server":"basedpyright","attach_ms":244,"diagnostics":"pass","errors":[],"definition":"pass"}
+,
+  {"definition":"pass","attach_ms":71,"errors":[],"attached":true,"diagnostics":"pass","server":"lua_ls"}
+]
