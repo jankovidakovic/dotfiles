@@ -18,6 +18,7 @@ return {
 				'ormolu',
 				'hlint',
 				'prettier',
+				'hadolint',
 			},
 		},
 	},
@@ -46,6 +47,20 @@ return {
 				'ansiblels',
 				'kotlin_lsp',
 			})
+
+			vim.api.nvim_create_user_command('LspInfo', function()
+				local clients = vim.lsp.get_clients({ bufnr = 0 })
+				if #clients == 0 then
+					print("No LSP clients attached to this buffer")
+					return
+				end
+				local lines = {}
+				for _, client in ipairs(clients) do
+					table.insert(lines, string.format("%s (id=%d, root=%s)",
+						client.name, client.id, client.root_dir or "nil"))
+				end
+				print(table.concat(lines, "\n"))
+			end, {})
 		end,
 	},
 }
