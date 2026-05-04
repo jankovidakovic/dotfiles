@@ -53,26 +53,3 @@ vim.api.nvim_create_autocmd('BufWritePost', {
 	desc = 'Restart LSP clients when project config files are saved',
 })
 
-local last_reload = 0
-
-vim.api.nvim_create_autocmd('FocusGained', {
-	group = augroup,
-	callback = function()
-		local now = vim.uv.now()
-		if now - last_reload < 5000 then
-			return
-		end
-		last_reload = now
-		restart_lsp_clients()
-	end,
-	desc = 'Restart LSP clients when Neovim regains focus (debounced 5s)',
-})
-
-vim.api.nvim_create_autocmd('TermClose', {
-	group = augroup,
-	callback = function()
-		last_reload = vim.uv.now()
-		restart_lsp_clients()
-	end,
-	desc = 'Restart LSP clients when a terminal closes',
-})
