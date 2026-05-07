@@ -1,0 +1,52 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+if [[ $# -lt 1 ]]; then
+	echo "Usage: gwco2 <branch-name>" >&2
+	exit 1
+fi
+
+branch="$1"
+
+# if branch doesnt exist, create it
+if ! git show-ref --verify --quiet "refs/heads/$branch"; then
+	git branch "$branch"
+fi
+
+repo_root="$(git rev-parse --path-format=absolute --git-common-dir | sed 's/\/\.git$//')"
+repo_name="$(basename "$repo_root")"
+#
+# shell magic to extract absolute path of existing worktree
+existing_worktree_path="$(git worktree list --porcelain | awk -v b="refs/heads/$branch" '/^worktree /{p=$2} /^branch /{if($2==b) print p}')"
+
+if [[ -n "$existing_worktree_path" ]]; then
+	# if the worktree exists elsewhere (e.g. in main root), use that elsewhere as the dir
+	worktree_dir="$existing_worktree_path"
+else
+	# resolve to a conventional location
+	worktree_dir="$HOME/.worktrees/${repo_name}/${branch}"
+fi
+
+# if worktree_dir doesnt exist, create it
+if [[ ! -d "$worktree_dir" ]]; then
+	git worktree add "$worktree_dir" "$branch"
+fi
+
+tmux_session="${repo_name}/${branch}"
+
+# if tmux session doesnt exist, create it
+# caveat: this will behave unexpectedly if the tmux session with the name repo_name/branch
+# 	already exists, but that will basically never happen so we dont care about it
+if ! tmux has-session -t "=$tmux_session" 2>/dev/null; then
+	tmux new-session -d -s "$tmux_session" -c "$worktree_dir" -n "shell"
+	tmux new-window -t "$tmux_session" -n "code" -c "$worktree_dir" "vim ."
+	tmux new-window -t "$tmux_session" -n "claude" -c "$worktree_dir" claude
+	tmux select-window -t "$tmux_session:shell"
+fi
+
+# either attach or switch, depending on if we're already in tmux
+if [[ -n "${TMUX:-}" ]]; then
+	exec tmux switch-client -t "=$tmux_session"
+else
+	exec tmux attach-session -t "=$tmux_session"
+fi
