@@ -39,7 +39,7 @@ tmux_session="${repo_name}/${branch}"
 # 	already exists, but that will basically never happen so we dont care about it
 if ! tmux has-session -t "=$tmux_session" 2>/dev/null; then
 	tmux new-session -d -s "$tmux_session" -c "$worktree_dir" -n "shell"
-	tmux new-window -t "$tmux_session" -n "code" -c "$worktree_dir" "vim ."
+	tmux new-window -t "$tmux_session" -n "code" -c "$worktree_dir" "nvim ."
 	tmux new-window -t "$tmux_session" -n "claude" -c "$worktree_dir" claude
 	tmux select-window -t "$tmux_session:shell"
 fi
