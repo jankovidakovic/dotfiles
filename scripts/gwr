@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+if [[ $# -lt 1 ]]; then
+	echo "Usage: gwr <branch-name>" >&2
+	exit 1
+fi
+
+branch="$1"
+
+# remove workflow
+git workflow remove "$branch"
+
+# we have to know repo name to kill session because its named repo/branch
+
+repo_root="$(git rev-parse --path-format=absolute --git-common-dir | sed 's/\/\.git$//')"
+repo_name="$(basename "$repo_root")"
+
+# kill tmux session
+tmux kill-session -t "${repo_name}/${branch}"
+
+# done
