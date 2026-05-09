@@ -14,8 +14,3 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 		vim.hl.on_yank()
 	end,
 })
-
-vim.api.nvim_create_autocmd('FileType', {
-	pattern = '*',
-	callback = function() vim.treesitter.start() end,
-})
