@@ -6,7 +6,6 @@
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 -- Diagnostic keymaps
-vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 vim.keymap.set('n', '<leader>vd', function()
 	vim.diagnostic.open_float { border = "rounded" }
 end, { desc = '[V]iew [D]iagnostics' })
