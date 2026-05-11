@@ -44,17 +44,5 @@ return function(bufnr)
 	--           --  For example, in C this would take you to the header.
 	map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
 
-	map(
-		"<leader>vd",
-		function()
-			vim.diagnostic.open_float { border = "rounded" }
-		end,
-		"[V]iew [D]iagnostics"
-	)
-
 	map("<leader>fm", vim.lsp.buf.format, "[F]or[M]at")
-
-	map(
-		"<leader>fe", vim.diagnostic.goto_next, "[F]orward [E]rror"
-	)
 end
