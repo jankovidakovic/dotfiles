@@ -36,3 +36,5 @@ include $HOME/.config/sway/etc/config.d/*
 
 # user config
 include $HOME/.config/sway/config.d/*.conf
+
+seat seat0 xcursor_theme breeze-cursors 24
