@@ -14,7 +14,11 @@ repo_root="$(git rev-parse --path-format=absolute --git-common-dir | sed 's/\/\.
 repo_name="$(basename "$repo_root")"
 
 # kill tmux session
-tmux kill-session -t "${repo_name}/${branch}"
+# tmux disallows . and : in session names (it silently replaces them with _),
+# and . in a -t target is parsed as a pane separator
+tmux_session="${repo_name}/${branch}"
+tmux_session="${tmux_session//[.:]/_}"
+tmux kill-session -t "=$tmux_session"
 
 # remove workflow
 git worktree remove "$branch"

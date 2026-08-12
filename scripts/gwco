@@ -33,6 +33,9 @@ if [[ ! -d "$worktree_dir" ]]; then
 fi
 
 tmux_session="${repo_name}/${branch}"
+# tmux disallows . and : in session names (it silently replaces them with _),
+# and . in a -t target is parsed as a pane separator
+tmux_session="${tmux_session//[.:]/_}"
 
 # if tmux session doesnt exist, create it
 # caveat: this will behave unexpectedly if the tmux session with the name repo_name/branch
