@@ -1,6 +1,5 @@
-
 # base config for oh my zsh
-source /usr/share/oh-my-zsh/zshrc  # this sources the oh-my-zsh so we cannot configure plugins
+source ~/.config/zsh/ohmyzsh/zshrc  # this sources the oh-my-zsh so we cannot configure plugins
 #  -> okay I guess this makes the 
 
 BASE_OHMYZSH_CONFIG=~/.config/zsh/.zshrc.manjaro
