@@ -70,4 +70,4 @@ path+=("/home/jvidakovic/bin/")
 export PATH
 
 # source kubectl auto-completion
-source <(kubectl completion zsh)
+command -v kubectl >/dev/null && source <(kubectl completion zsh)
