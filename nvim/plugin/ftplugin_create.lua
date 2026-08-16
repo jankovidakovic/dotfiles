@@ -12,7 +12,7 @@ vim.api.nvim_create_user_command('FtpluginCreate', function()
 		return
 	end
 	-- if ftplugin that sources treesitter already exists, we have nothing to do
-	local path = vim.fn.expand('~/dotfiles/dotfiles/nvim/ftplugin/') .. ft .. '.lua'
+	local path = vim.fn.expand('~/dotfiles/nvim/ftplugin/') .. ft .. '.lua'
 	if vim.uv.fs_stat(path) then
 		vim.notify(path .. ' already exists', vim.log.levels.WARN)
 		return
