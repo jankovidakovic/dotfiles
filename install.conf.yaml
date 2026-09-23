@@ -15,3 +15,7 @@
     # waybar
     ~/.config/waybar: waybar
     ~/.gitconfig: git/.gitconfig
+
+- shell:
+    - command: ~/.config/tmux/plugins/tpm/bin/install_plugins
+      description: Installing tmux plugins
